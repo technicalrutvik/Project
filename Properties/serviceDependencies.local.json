@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "",
+      "secretStore": null,
+      "type": "mssql.local",
+      "connectionId": "Server=localhost:SQLEXPRESS;Database=master;Trusted_Connection=True;",
+      "dynamicId": null
+    },
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql2": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.local",
+      "connectionId": "Server=localhost:SQLEXPRESS01;Database=master;Trusted_Connection=True;TrustServerCertificate=True;",
+      "dynamicId": null
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "Server=localhost:SQLEXPRESS;Database=master;Trusted_Connection=True;",
+      "dynamicId": null
+    },
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "Server=localhost:SQLEXPRESS01;Database=master;Trusted_Connection=True;TrustServerCertificate=True;",
+      "dynamicId": null
+    }
+  }
+}
