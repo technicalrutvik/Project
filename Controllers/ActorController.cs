@@ -51,7 +51,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id,[Bind("fullName,ProfilePictureURL,Bio")] Actor actor)
+        public async Task<IActionResult> Edit(int id,[Bind("aId,fullName,ProfilePictureURL,Bio")] Actor actor)
         {
             actor.aId = id;
             if (!ModelState.IsValid)
@@ -61,5 +61,25 @@ namespace WebApplication1.Controllers
             await _service.UpdateAsync(id, actor);
             return RedirectToAction(nameof(Index));
         }
+
+        // Delete
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var actorDetails = await _service.GetByIdAsync(id);
+            if (actorDetails == null) return View("NotFound");
+            return View(actorDetails);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var actorDetails = await _service.GetByIdAsync(id);
+            if (actorDetails == null) return View("NotFound");
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }
