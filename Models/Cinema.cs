@@ -1,21 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WebApplication1.Data.Base;
 
 namespace WebApplication1.Models
 {
-    public class Cinema
+    public class Cinema : IEntityBase
     {
         [Key]
 
         public int Id { get; set; }
-        [Display(Name = "Profile Picture Logo")]
+        [Display(Name = " Picture Logo")]
 
         public string logo { get; set; }
 
-        [Display(Name = "Profile  Name")]
+        [Display(Name = "  Name")]
 
         public string name { get; set; }
 
-        [Display(Name = "Profile Description")]
+        [Display(Name = " Description")]
 
         public string description { get; set; }
 

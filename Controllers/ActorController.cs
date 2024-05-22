@@ -51,9 +51,8 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id,[Bind("aId,fullName,ProfilePictureURL,Bio")] Actor actor)
+        public async Task<IActionResult> Edit(int id,[Bind("Id,fullName,ProfilePictureURL,Bio")] Actor actor)
         {
-            actor.aId = id;
             if (!ModelState.IsValid)
             {
                 return View(actor);

@@ -11,6 +11,7 @@ namespace WebApplication1.Data
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDBContext>();
+                //context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
 
 

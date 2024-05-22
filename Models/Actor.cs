@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WebApplication1.Data.Base;
 
 namespace WebApplication1.Models
 {
-    public class Actor
+    public class Actor : IEntityBase
     {
         [Key]
 
-        public int aId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Profile Picture URL")]
         [Required(ErrorMessage ="Profile Picture required")]       
@@ -26,7 +27,7 @@ namespace WebApplication1.Models
 
         //Reference
 
-        public List<Actor_Movie> Actors_Movies { get; set;}
-
+        public List<Actor_Movie>? Actors_Movies { get; set;}
+        //public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
